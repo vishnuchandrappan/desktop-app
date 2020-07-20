@@ -1,41 +1,153 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Header";
-export default function Billing() {
-  return (
-    <div className="">
-      <Header />
-      <div className="heading">
-        <h1>Smart Mart</h1>
-      </div>
-      <div className="container">
-        <h3 className="mt-4">ORDER ID : FS234</h3>
-        <table class="table jumbotron">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Items</th>
-              <th scope="col">Unit Price</th>
-              <th scope="col">Units</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Milk Bikis</td>
-              <td>20</td>
-              <td>6</td>
-              <td>120</td>
-            </tr>
-          </tbody>
-        </table>
-        <div className="container bg-light text-dark p-4">Total : 120</div>
-        <div className="btn-container mt-4">
-          <button className="btn btn-light text-dark">
-            Proceed for Payment
-          </button>
+
+export default class Billing extends Component {
+  render() {
+    return (
+      <div className="">
+        <Header />
+        <div className="container">
+          <h1 className="mt-4">All Patients</h1>
+          <h4 className="ta-l">
+            {new Date().getDate() +
+              "/" +
+              new Date().getMonth() +
+              "/" +
+              new Date().getFullYear()}
+          </h4>
+          <table class="table jumbotron">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Predicted Disease</th>
+                <th scope="col">Patient ID</th>
+                <td>View</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>John Doe</td>
+                <td>20</td>
+                <td>Depression</td>
+                <td>120</td>
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>jane Doe</td>
+                <td>21</td>
+                <td>Common Cold</td>
+                <td>63</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Example User</td>
+                <td>5</td>
+                <td>Pneumonia</td>
+                <td>4</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 className="ta-l">19/6/2020</h4>
+          <table class="table jumbotron">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Predicted Disease</th>
+                <th scope="col">Patient ID</th>
+                <td>View</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2</th>
+                <td>jane Doe</td>
+                <td>21</td>
+                <td>Common Cold</td>
+                <td>63</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Example User</td>
+                <td>5</td>
+                <td>Pneumonia</td>
+                <td>4</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 className="ta-l">18/6/2020</h4>
+          <table class="table jumbotron">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Predicted Disease</th>
+                <th scope="col">Patient ID</th>
+                <td>View</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2</th>
+                <td>jane Doe</td>
+                <td>21</td>
+                <td>Common Cold</td>
+                <td>63</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Example User</td>
+                <td>5</td>
+                <td>Pneumonia</td>
+                <td>4</td>{" "}
+                <td>
+                  <Link to="/patient" className="btn btn-danger">
+                    view
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

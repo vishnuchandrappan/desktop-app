@@ -1,46 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { reactLocalStorage } from "reactjs-localstorage";
 import Header from "../Header";
-export default function ActiveOrders() {
-  return (
-    <div className="">
-      <Header />
-      <div className="heading">
-        <h1>Smart Mart</h1>
-      </div>
-      <div className="container">
-        <h3 className="mt-4">Active Orders</h3>
-        <table class="table jumbotron">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">User</th>
-              <th scope="col">Order ID</th>
-              <th scope="col">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark Dane</td>
-              <td>FS234</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>John Doe</td>
-              <td>AR341</td>
-              <td>85</td>
-            </tr>
-          </tbody>
-        </table>
 
-        <div className="btn-container">
-          <Link to="/billing">
-            <button className="btn btn-danger">Billing</button>
-          </Link>
+class ActiveOrders extends Component {
+  state = {
+    isLoggedIn: true,
+  };
+  componentDidMount() {
+    this.setState({
+      isLoggedIn: reactLocalStorage.get("isLoggedIn"),
+    });
+  }
+  render() {
+    return (
+      <div className="">
+        {this.state.isLoggedIn ? "" : <Redirect to="/" />}
+        <Header />
+        <div className="container">
+          <h1 className="mt-4">HOME</h1>
+          <h3 className="bg-danger pl-5 pr-5 p-2 w-100 t-c">
+            DOCTORS DASHBOARD
+          </h3>
+
+          <div className="jumbotron grid-1">
+            <Link to="/active-patients">
+              <span className="card">Active Patients</span>
+            </Link>
+            <Link to="/all-patients">
+              <span className="card">All Patients</span>
+            </Link>
+            <Link to="/notifications">
+              <span className="card">Notifications</span>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default ActiveOrders;

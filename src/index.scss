@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import-normalize; /* bring in normalize.css styles */
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
 
 * {
   margin: 0;
@@ -8,8 +9,74 @@
   box-sizing: border-box;
 }
 
+.full-page {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  span{
+    color: lavender;
+    font-size: 2rem;
+  }
+}
+.ta-l {
+  text-align: left;
+  width: 100%;
+  color: lavender;
+}
+.cp {
+  cursor: pointer;
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  .card {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: 0.4s;
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+  }
+}
+
 body {
-  background-color: rgba(#3b6978, 1);
+  background-color: rgba(#393e46, 1);
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  letter-spacing: 0.3em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  .jumbotron {
+    width: 100%;
+    box-shadow: 0px 5px 30px rgba(white, 0.4);
+  }
+  h1 {
+    background-color: white;
+    padding: 0 10px;
+    border-radius: 4px;
+  }
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 10px 0;
 }
 
 .btn-container {
@@ -18,6 +85,16 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  .btn {
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.t-c {
+  text-align: center;
 }
 
 .flex-1 {

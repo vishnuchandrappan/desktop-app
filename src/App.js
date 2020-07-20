@@ -5,6 +5,9 @@ import Routes from "./components/Routes";
 function App() {
   return (
     <BrowserRouter>
+      <div className="heading">
+        <h1>XPREDOCON</h1>
+      </div>
       <Routes />
     </BrowserRouter>
   );
